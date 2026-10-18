@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+
+# macOS / Linux
+.DS_Store
+Thumbs.db
+
+# Node (if you ever add npm)
+node_modules/
