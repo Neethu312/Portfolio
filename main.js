@@ -41,8 +41,10 @@ navLinksContainer.querySelectorAll('a').forEach(link => {
 /* ─── 3. TYPEWRITER ─── */
 const phrases = [
   'Python Full-Stack Developer',
+  'Certified Claude Code Specialist',
   'Django & DRF Architect',
   'Async Pipeline Engineer',
+  'AI-Assisted Terminal Engineer',
   'REST API Specialist',
   'Multi-Tenant RBAC Expert',
   'Payment Gateway Integrator',
@@ -78,6 +80,7 @@ typeWriter();
 function addRevealClasses() {
   const targets = [
     ...document.querySelectorAll('.skill-card'),
+    ...document.querySelectorAll('.cert-card'),
     ...document.querySelectorAll('.project-card'),
     ...document.querySelectorAll('.stat-card'),
     ...document.querySelectorAll('.timeline-item'),
@@ -304,3 +307,32 @@ if (codeCard) {
     codeCard.style.transform = 'perspective(800px) rotateY(0) rotateX(0) translateY(0)';
   });
 }
+
+/* ─── 10. CERTIFICATE MODAL ─── */
+function openCertModal() {
+  const modal = document.getElementById('cert-modal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeCertModal(e) {
+  if (e && e.target && e.target.id === 'cert-modal') {
+    closeCertModalDirect();
+  }
+}
+
+function closeCertModalDirect() {
+  const modal = document.getElementById('cert-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeCertModalDirect();
+  }
+});
